@@ -24,8 +24,8 @@ export const studentSchema = Joi.object({
 
 export const essaySchema = Joi.object({
   title: Joi.string().max(500).optional().allow(""),
-  theme: Joi.string().min(5).max(500).required(),
-  content: Joi.string().min(140).max(7000).required(),
+  theme: Joi.string().max(500).required(),
+  content: Joi.string().max(7000).required(),
   feedback: Joi.string().optional().allow(""),
   correctedAt: Joi.date().iso().allow(null),
   studentId: Joi.string().required(),
